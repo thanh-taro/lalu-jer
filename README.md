@@ -1,8 +1,8 @@
 # Laravel Json Exception Response
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel-soft/jer.svg)](https://packagist.org/packages/laravel-soft/jer) [![Build Status](https://travis-ci.org/thanh-taro/laravel-jer.svg?branch=master)](https://travis-ci.org/thanh-taro/laravel-jer) [![Coverage Status](https://coveralls.io/repos/github/thanh-taro/laravel-jer/badge.svg?brand=master)](https://coveralls.io/github/thanh-taro/laravel-jer?brand=master) [![Total Downloads](https://poser.pugx.org/laravel-soft/jer/downloads)](https://packagist.org/packages/laravel-soft/jer) [![License](https://poser.pugx.org/laravel-soft/jer/license)](https://packagist.org/packages/laravel-soft/jer)
+[![Latest Stable Version](https://img.shields.io/packagist/v/lalu/jer.svg)](https://packagist.org/packages/lalu/jer) [![Build Status](https://travis-ci.org/thanh-taro/lalu-jer.svg?branch=master)](https://travis-ci.org/thanh-taro/lalu-jer) [![Coverage Status](https://coveralls.io/repos/github/thanh-taro/lalu-jer/badge.svg?brand=master)](https://coveralls.io/github/thanh-taro/lalu-jer?brand=master) [![Total Downloads](https://poser.pugx.org/lalu/jer/downloads)](https://packagist.org/packages/lalu/jer) [![License](https://poser.pugx.org/lalu/jer/license)](https://packagist.org/packages/lalu/jer)
 
-A Laravel/Lumen 5 package for structing API exception response in JSON followed <http://jsonapi.org/>.
+A Laravel/Lumen package for structing API exception response in JSON followed <http://jsonapi.org/>.
 
 ## Install
 
