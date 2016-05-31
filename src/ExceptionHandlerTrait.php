@@ -232,6 +232,6 @@ trait ExceptionHandlerTrait
             return app('translator');
         }
 
-        return app('translator')->$this->trans($id, $parameters, $domain, $locale);
+        return app('translator')->trans($id, $parameters, $domain, $locale);
     }
 }
