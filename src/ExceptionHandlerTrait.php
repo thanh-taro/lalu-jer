@@ -4,9 +4,11 @@ namespace LaLu\JER;
 
 use Exception;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Console\Application as ConsoleApplication;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Http\Exception\HttpResponseException;
 
 trait ExceptionHandlerTrait
 {
@@ -18,6 +20,64 @@ trait ExceptionHandlerTrait
     public $jsonapiVersion = '1.0.0';
     public $meta;
     public $headers = [];
+
+    /**
+     * The log implementation.
+     *
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $log;
+
+    /**
+     * A list of the exception types that should not be reported.
+     *
+     * @var array
+     */
+    protected $dontReport = [];
+
+    /**
+     * Get log instance.
+     *
+     * @return \Psr\Log\LoggerInterface
+     */
+    protected function getLog()
+    {
+        if ($this->log === null) {
+            $this->log = app('Psr\Log\LoggerInterface');
+        }
+
+        return $this->log;
+    }
+
+    /**
+     * Determine if the exception should be reported.
+     *
+     * @param \Exception $e
+     *
+     * @return bool
+     */
+    public function shouldReport(Exception $e)
+    {
+        return !$this->shouldntReport($e);
+    }
+
+    /**
+     * Determine if the exception is in the "do not report" list.
+     *
+     * @param \Exception $e
+     *
+     * @return bool
+     */
+    protected function shouldntReport(Exception $e)
+    {
+        foreach ($this->dontReport as $type) {
+            if ($e instanceof $type) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     /**
      * Before rendering the exception into a response.
@@ -46,6 +106,30 @@ trait ExceptionHandlerTrait
         list($status, $error, $headers) = $this->getExceptionError($exception);
 
         return $this->makeResponse($exception, $error, $status);
+    }
+
+    /**
+     * Report or log an exception.
+     *
+     * @param \Exception $e
+     */
+    public function report(Exception $e)
+    {
+        if ($this->shouldReport($e)) {
+            $this->getLog()->error($e);
+        }
+    }
+
+    /**
+     * Render an exception to the console.
+     *
+     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
+     * @param  \Exception  $e
+     * @return void
+     */
+    public function renderForConsole($output, Exception $e)
+    {
+        (new ConsoleApplication)->renderException($e, $output);
     }
 
     /**
