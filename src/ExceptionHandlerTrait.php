@@ -8,7 +8,6 @@ use Symfony\Component\Console\Application as ConsoleApplication;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Http\Exception\HttpResponseException;
 
 trait ExceptionHandlerTrait
 {
@@ -123,13 +122,12 @@ trait ExceptionHandlerTrait
     /**
      * Render an exception to the console.
      *
-     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
-     * @param  \Exception  $e
-     * @return void
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param \Exception                                        $e
      */
     public function renderForConsole($output, Exception $e)
     {
-        (new ConsoleApplication)->renderException($e, $output);
+        (new ConsoleApplication())->renderException($e, $output);
     }
 
     /**
