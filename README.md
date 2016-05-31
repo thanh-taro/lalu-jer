@@ -174,7 +174,7 @@ $option = [
 $attributes = [
     'meta' => [
         'apiVersion' => '1.0.0',
-    ]
+    ],
     'errors' => new Error(['version' => '1.0.0'], ['title' => 'My custom error', 'detail' => 'This is an error response']), // Error content
 ];
 $response = \JER::getResponse($option, $attributes);
