@@ -1,4 +1,4 @@
-# Laravel Json Exception Response
+# Json Exception Response
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/lalu/jer.svg)](https://packagist.org/packages/lalu/jer) [![Build Status](https://travis-ci.org/thanh-taro/lalu-jer.svg?branch=master)](https://travis-ci.org/thanh-taro/lalu-jer) [![Coverage Status](https://coveralls.io/repos/github/thanh-taro/lalu-jer/badge.svg?brand=master)](https://coveralls.io/github/thanh-taro/lalu-jer?brand=master) [![Total Downloads](https://poser.pugx.org/lalu/jer/downloads)](https://packagist.org/packages/lalu/jer) [![License](https://poser.pugx.org/lalu/jer/license)](https://packagist.org/packages/lalu/jer)
 
