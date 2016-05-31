@@ -58,6 +58,8 @@ Then, add this line:
 class_alias(LaLu\JER\Facades\JERFacade::class, 'JER');
 ```
 
+For localization, you have to create `messages.php` under `resources\lang\vendor\lalu-jer\en` (default is en - English). Some built-in message ids is in [here](https://github.com/thanh-taro/lalu-jer/blob/master/src/resources/lang/en/messages.php)
+
 
 ## Usage
 
