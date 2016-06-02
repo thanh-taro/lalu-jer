@@ -16,7 +16,7 @@ trait ExceptionHandlerTrait
         418, 422, 423, 424, 425, 426, 449, 450, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510,
     ];
 
-    public $jsonapiVersion = '1.0.0';
+    public $jsonapiVersion = '1.0';
     public $meta;
     public $headers = [];
 

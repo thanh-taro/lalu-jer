@@ -4,7 +4,7 @@ namespace LaLu\JER;
 
 abstract class Object
 {
-    protected $version = '1.0.0';
+    protected $version = '1.0';
     protected $attributes;
 
     /**
