@@ -169,7 +169,7 @@ If you want to custom error json response, feel free to use this function:
 
 ```php
 $option = [
-    'version' => '1.0.0', // JSONAPI specification version
+    'version' => '1.0', // JSONAPI specification version
     'status' => 400, // HTTP status code
     'headers' => ['My-Custom-Header' => 'Value'], // Response headers,
     'exception' => new \Exception(), // Exception
@@ -177,8 +177,9 @@ $option = [
 $attributes = [
     'meta' => [
         'apiVersion' => '1.0.0',
+        'author' => 'thanh-taro',
     ],
-    'errors' => new Error(['version' => '1.0.0'], ['title' => 'My custom error', 'detail' => 'This is an error response']), // Error content
+    'errors' => new Error(['version' => '1.0'], ['title' => 'My custom error', 'detail' => 'This is an error response']), // Error content
 ];
 $response = \JER::getResponse($option, $attributes);
 ```

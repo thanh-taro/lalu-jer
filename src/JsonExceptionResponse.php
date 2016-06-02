@@ -23,7 +23,7 @@ class JsonExceptionResponse extends Object
      */
     public function getJsonStruct()
     {
-        if ($this->version === '1.0.0') {
+        if ($this->version === '1.0') {
             return ['meta', 'errors'];
         }
 

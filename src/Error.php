@@ -11,7 +11,7 @@ class Error extends Object
      */
     public function getJsonStruct()
     {
-        if ($this->version === '1.0.0') {
+        if ($this->version === '1.0') {
             return ['id', 'links', 'status', 'code', 'title', 'detail', 'source', 'meta'];
         }
 
